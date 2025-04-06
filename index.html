@@ -1,52 +1,256 @@
-<!DOCTYPE html><html lang="it">
+<!DOCTYPE html>
+<html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Trainer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ristorante La Tavola</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; background: #f9f9f9; }
-    header { background: #222; color: #fff; padding: 1rem; text-align: center; }
-    nav { background: #333; display: flex; justify-content: center; }
-    nav a { color: #fff; padding: 1rem; text-decoration: none; }
-    nav a:hover { background: #555; }
-    section { padding: 2rem 1rem; }
-    .hero { background: url('https://images.unsplash.com/photo-1571019613911-ec2a7ecb1e51') no-repeat center center/cover; color: white; text-align: center; padding: 5rem 1rem; }
-    .hero h1 { font-size: 2.5rem; }
-    .services, .about, .contact { background: #fff; margin: 1rem 0; border-radius: 8px; padding: 1rem; }
-    footer { background: #222; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
-    @media (min-width: 768px) {
-      .hero h1 { font-size: 3rem; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #111;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background: #4CAF50;
+      transition: 0.3s;
+    }
+
+    .hero {
+      position: relative;
+      height: 70vh;
+      background: url('https://images.unsplash.com/photo-1511960602669-602ee3a6f07a') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .about,
+    .menu,
+    .reviews,
+    .contact {
+      padding: 4rem 2rem;
+      background: #fff;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .about h2,
+    .menu h2,
+    .reviews h2,
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 0;
+    }
+
+    .menu li {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .menu li:hover {
+      background: #4CAF50;
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .review-item {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .review-item:hover {
+      background: #4CAF50;
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    .review-item p {
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 400px;
+      margin-top: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .slider {
+      position: relative;
+      max-width: 100%;
+      margin: 2rem auto;
+      overflow: hidden;
+    }
+
+    .slider img {
+      width: 100%;
+      height: auto;
+      transition: transform 1s ease;
+    }
+
+    .slider .slide {
+      display: none;
+    }
+
+    .slider .active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+
+      .menu ul {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Max Fitness</h1>
-    <p>Personal Trainer Certificato</p>
-  </header>  <nav>
-    <a href="#about">Chi sono</a>
-    <a href="#services">Servizi</a>
+    <h1>La Tavola</h1>
+    <p>Un'esperienza culinaria unica e raffinata</p>
+  </header>
+
+  <nav>
+    <a href="#about">Chi siamo</a>
+    <a href="#menu">Il Menu</a>
+    <a href="#reviews">Recensioni</a>
     <a href="#contact">Contatti</a>
-  </nav>  <section class="hero">
-    <h1>Allenati con i risultati</h1>
-    <p>Programmi personalizzati per ogni livello</p>
-  </section>  <section id="about" class="about">
-    <h2>Chi sono</h2>
-    <p>Sono Max, personal trainer con 5 anni di esperienza. Aiuto le persone a migliorare il proprio corpo e la propria salute con programmi su misura.</p>
-  </section>  <section id="services" class="services">
-    <h2>Servizi</h2>
+  </nav>
+
+  <div class="hero">
+    <h2>Benvenuti da La Tavola</h2>
+    <p>Un viaggio nei sapori autentici d'Italia</p>
+  </div>
+
+  <section id="about" class="about">
+    <h2>Chi siamo</h2>
+    <p>La Tavola è il ristorante ideale per chi cerca un'esperienza autentica, con un servizio impeccabile e piatti che celebrano la tradizione culinaria italiana.</p>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Il Nostro Menu</h2>
     <ul>
-      <li>Programmi di allenamento personalizzati</li>
-      <li>Consulenza nutrizionale</li>
-      <li>Sessioni online o in presenza</li>
+      <li><strong>Antipasti:</strong> Bruschette al pomodoro, Carpaccio di manzo</li>
+      <li><strong>Primi:</strong> Spaghetti alle vongole, Risotto ai funghi porcini</li>
+      <li><strong>Secondi:</strong> Filetto di manzo, Pollo alla cacciatora</li>
+      <li><strong>Dolci:</strong> Tiramisu, Cannoli siciliani</li>
     </ul>
-  </section>  <section id="contact" class="contact">
-    <h2>Contatti</h2>
-    <p>Email: maxfitness@email.com</p>
-    <p>Telefono: +39 333 1234567</p>
-  </section>  <footer>
-    <p>&copy; 2025 Max Fitness - Tutti i diritti riservati</p>
+  </section>
+
+  <section id="reviews" class="reviews">
+    <h2>Le Recensioni dei Nostri Clienti</h2>
+    <div class="review-item">
+      <p>"Un'esperienza culinaria indimenticabile! I piatti sono preparati con ingredienti freschi e la presentazione è impeccabile."</p>
+      <p><strong>- Marco L.</strong></p>
+    </div>
+    <div class="review-item">
+      <p>"Atmosfera calda e accogliente. Il miglior ristorante della città!"</p>
+      <p><strong>- Sofia G.</strong></p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contattaci</h2>
+    <p>Telefono: +39 123 456 789</p>
+    <p>Email: info@latavola.com</p>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.994847125595!2d2.2922925156749866!3d48.85884407928769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d4e2ebff7b%3A0x5e38804e633db6cd!2sEiffel%20Tower!5e0!3m2!1sen!2sus!4v1611129020581!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 La Tavola - Tutti i diritti riservati</p>
   </footer>
+
+  <script>
+    let slideIndex = 0;
+    function showSlides() {
+      let slides = document.querySelectorAll('.slider img');
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === slideIndex) slide.classList.add('active');
+      });
+      slideIndex = (slideIndex + 1) % slides.length;
+    }
+    setInterval(showSlides, 3000);  // Cambia immagine ogni 3 secondi
+  </script>
 </body>
 </html>
