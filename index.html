@@ -16,170 +16,213 @@
       background-color: #f4f4f4;
       color: #333;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
+    /* Header */
     header {
-      background: #333;
+      background: #111;
       color: #fff;
-      padding: 2rem 1rem;
+      padding: 3rem 0;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      animation: fadeIn 2s ease-in;
     }
 
+    header p {
+      font-size: 1.5rem;
+      color: #bbb;
+    }
+
+    /* Sticky Navigation */
     nav {
-      display: flex;
-      justify-content: center;
-      background: #111;
-      padding: 1rem;
+      position: sticky;
+      top: 0;
+      background: #222;
+      z-index: 100;
+      text-align: center;
     }
 
     nav a {
+      display: inline-block;
       color: #fff;
+      padding: 1.5rem 2rem;
       text-decoration: none;
-      padding: 1rem;
       text-transform: uppercase;
       font-weight: bold;
+      transition: background 0.3s ease;
     }
 
     nav a:hover {
       background: #4CAF50;
-      transition: 0.3s;
     }
 
+    /* Hero Section */
     .hero {
       position: relative;
-      height: 70vh;
+      height: 80vh;
       background: url('https://images.unsplash.com/photo-1511960602669-602ee3a6f07a') no-repeat center center/cover;
       color: white;
-      text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      text-align: center;
+      animation: fadeIn 3s ease-in;
     }
 
     .hero h2 {
-      font-size: 3rem;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
       font-weight: bold;
     }
 
     .hero p {
-      font-size: 1.5rem;
-      margin-top: 1rem;
+      font-size: 2rem;
     }
 
-    .about,
-    .menu,
-    .reviews,
-    .contact {
-      padding: 4rem 2rem;
+    /* Sections */
+    section {
+      padding: 5rem 2rem;
       background: #fff;
-      margin: 2rem 0;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 3rem 0;
+      position: relative;
     }
 
-    .about h2,
-    .menu h2,
-    .reviews h2,
-    .contact h2 {
-      font-size: 2.5rem;
+    section h2 {
+      font-size: 3rem;
       margin-bottom: 1rem;
+      letter-spacing: 2px;
     }
 
+    section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #777;
+    }
+
+    /* Menu Section */
     .menu ul {
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
       padding: 0;
+      margin-top: 2rem;
     }
 
     .menu li {
       background: #f9f9f9;
-      border: 1px solid #ddd;
-      padding: 1.5rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
+      padding: 2rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .menu li:hover {
       background: #4CAF50;
       color: white;
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+    }
+
+    /* Review Section */
+    .reviews {
+      background: #f1f1f1;
     }
 
     .review-item {
-      background: #f9f9f9;
+      background: #fff;
       padding: 1.5rem;
-      margin: 1rem 0;
+      margin: 1.5rem 0;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .review-item:hover {
       background: #4CAF50;
       color: white;
-      transform: translateY(-5px);
+      transform: translateY(-10px);
     }
 
     .review-item p {
       font-style: italic;
     }
 
+    /* Footer */
     footer {
-      background: #333;
+      background: #111;
       color: #fff;
       text-align: center;
-      padding: 2rem;
-    }
-
-    .map-container {
-      width: 100%;
-      height: 400px;
-      margin-top: 2rem;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .slider {
+      padding: 2rem 0;
       position: relative;
-      max-width: 100%;
-      margin: 2rem auto;
-      overflow: hidden;
     }
 
-    .slider img {
-      width: 100%;
-      height: auto;
-      transition: transform 1s ease;
+    footer p {
+      font-size: 1.2rem;
     }
 
-    .slider .slide {
-      display: none;
+    /* Parallax Effect */
+    .parallax {
+      background: url('https://images.unsplash.com/photo-1534182281422-4a8c3729fda1') no-repeat center center/cover;
+      height: 60vh;
+      position: relative;
+      background-attachment: fixed;
+      background-size: cover;
     }
 
-    .slider .active {
-      display: block;
+    .parallax h2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4rem;
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Animation for Fade-In Effect */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Mobile Responsive */
     @media (max-width: 768px) {
       .hero h2 {
         font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
       }
 
       .menu ul {
         grid-template-columns: 1fr;
       }
     }
+
   </style>
 </head>
 <body>
@@ -195,16 +238,24 @@
     <a href="#contact">Contatti</a>
   </nav>
 
+  <!-- Hero Section -->
   <div class="hero">
     <h2>Benvenuti da La Tavola</h2>
     <p>Un viaggio nei sapori autentici d'Italia</p>
   </div>
 
-  <section id="about" class="about">
+  <!-- About Section -->
+  <section id="about">
     <h2>Chi siamo</h2>
     <p>La Tavola è il ristorante ideale per chi cerca un'esperienza autentica, con un servizio impeccabile e piatti che celebrano la tradizione culinaria italiana.</p>
   </section>
 
+  <!-- Parallax Effect Section -->
+  <div class="parallax">
+    <h2>Scopri i nostri piatti</h2>
+  </div>
+
+  <!-- Menu Section -->
   <section id="menu" class="menu">
     <h2>Il Nostro Menu</h2>
     <ul>
@@ -215,6 +266,7 @@
     </ul>
   </section>
 
+  <!-- Reviews Section -->
   <section id="reviews" class="reviews">
     <h2>Le Recensioni dei Nostri Clienti</h2>
     <div class="review-item">
@@ -227,30 +279,20 @@
     </div>
   </section>
 
-  <section id="contact" class="contact">
+  <!-- Contact Section -->
+  <section id="contact">
     <h2>Contattaci</h2>
     <p>Telefono: +39 123 456 789</p>
     <p>Email: info@latavola.com</p>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.994847125595!2d2.2922925156749866!3d48.85884407928769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d4e2ebff7b%3A0x5e38804e633db6cd!2sEiffel%20Tower!5e0!3m2!1sen!2sus!4v1611129020581!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
-    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 La Tavola - Tutti i diritti riservati</p>
   </footer>
 
   <script>
-    let slideIndex = 0;
-    function showSlides() {
-      let slides = document.querySelectorAll('.slider img');
-      slides.forEach((slide, index) => {
-        slide.classList.remove('active');
-        if (index === slideIndex) slide.classList.add('active');
-      });
-      slideIndex = (slideIndex + 1) % slides.length;
-    }
-    setInterval(showSlides, 3000);  // Cambia immagine ogni 3 secondi
+    // Optional: Add dynamic JavaScript functionalities if needed
   </script>
 </body>
 </html>
